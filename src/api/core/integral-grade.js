@@ -10,10 +10,34 @@ export default {
       method: 'get'
     })
   },
+  // 根据传入的id删除数据
   removeById(id){
     return request({
       url: `/admin/core/integralGrade/remove/${id}`,
       method: 'delete'
+    })
+  },
+  // 新增数据
+  save(integralGrade){
+    return request({
+      url: '/admin/core/integralGrade/save',
+      method: 'post',
+      data: integralGrade
+    })
+  },
+  // 点击修改回显数据
+  getById(id){
+    return request({
+      url: `/admin/core/integralGrade/get/${id}`,
+      method: 'get'
+    })
+  },
+  // 更新数据
+  update(integralGrade){
+    return request({
+      url: '/admin/core/integralGrade/update',
+      method: 'put',
+      data: integralGrade
     })
   }
 }
